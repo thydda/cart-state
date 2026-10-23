@@ -1,0 +1,42 @@
+{
+  "name": "@thydda/cart-state",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check": "npm test",
+    "prepublishOnly": "npm run check"
+  },
+  "peerDependencies": {
+    "@angular/core": "^22.1.0",
+    "@ngrx/store": "^22.0.1",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {
+    "@angular/compiler": "22.2.3",
+    "@angular/core": "^22.1.0",
+    "@ngrx/store": "^22.0.1",
+    "rxjs": "^7.8.0",
+    "typescript": "~6.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thydda/cart-state.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
